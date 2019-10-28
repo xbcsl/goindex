@@ -280,7 +280,7 @@ function file_video_ck(path){
 <script type="text/javascript" src="ckplayer/ckplayer.js"></script>
 <div class="mdui-container-fluid">
 	<br>
-	<script type="text/javascript" src="https://raw.githubusercontent.com/xbcsl/goindex/master/themes/ckplayer/ckplayer.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/gh/xbcsl/goindex@master/themes/ckplayer/ckplayer.js"></script>
 <div id="video" style="width:600px;height:400px;"></div>
 <script type="text/javascript">
     var videoObject = {
