@@ -270,6 +270,41 @@ function file_video(path){
 	$('#content').html(content);
 }
 
+//文件展示 视频调用调用ckplayer
+//<embed src="http://www.ckplayer.com/ckplayer/x/ckplayer.swf" flashvars="video=视频地址"  quality="high" width="480" height="400" align="middle" allowScriptAccess="always" allowFullscreen="true" type="application/x-shockwave-flash"></embed>
+function file_video_ck(path){
+    var url = window.location.origin + path;
+    var content = `
+<script type="text/javascript" src="ckplayer/ckplayer.js"></script>
+<div class="mdui-container-fluid">
+	<br>
+	<script type="text/javascript" src="ckplayer/ckplayer.js"></script>
+<div id="video" style="width:600px;height:400px;"></div>
+<script type="text/javascript">
+    var videoObject = {
+        container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
+        variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
+        flashplayer:false,//如果强制使用flashplayer则设置成true
+        video:'${url}'//视频地址
+    };
+    var player=new ckplayer(videoObject);
+</script>
+	<br>
+	<!-- 固定标签 -->
+	<div class="mdui-textfield">
+	  <label class="mdui-textfield-label">下载地址</label>
+	  <input class="mdui-textfield-input" type="text" value="${url}"/>
+	</div>
+	<div class="mdui-textfield">
+	  <label class="mdui-textfield-label">引用地址</label>
+	  <textarea class="mdui-textfield-input"><video><source src="${url}" type="video/mp4"></video></textarea>
+	</div>
+</div>
+<a href="${url}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
+	`;
+    $('#content').html(content);
+}
+
 //
 function file_image(path){
 	var url = window.location.origin + path;
