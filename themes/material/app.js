@@ -184,7 +184,9 @@ function file(path){
 	}
 
 	if("|mp4|".indexOf(`|${ext}|`) >= 0){
-		return file_video(path);
+		//return file_video(path);
+        //改为调用ck
+		return file_video_ck(path);
 	}
 
 	if("|bmp|jpg|jpeg|png|gif|".indexOf(`|${ext}|`) >= 0){
@@ -278,7 +280,7 @@ function file_video_ck(path){
 <script type="text/javascript" src="ckplayer/ckplayer.js"></script>
 <div class="mdui-container-fluid">
 	<br>
-	<script type="text/javascript" src="ckplayer/ckplayer.js"></script>
+	<script type="text/javascript" src="https://raw.githubusercontent.com/xbcsl/goindex/master/themes/ckplayer/ckplayer.js"></script>
 <div id="video" style="width:600px;height:400px;"></div>
 <script type="text/javascript">
     var videoObject = {
